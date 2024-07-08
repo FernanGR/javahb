@@ -13,19 +13,53 @@ import com.example.pizza.Pizza;
 public class App {
     public static void main(String[] args) {
 
-        Ingredient ingredient = Ingredient.create(UUID.randomUUID(), "tomate", 1.0);
-        Pizza pizza = Pizza.create(UUID.randomUUID(), "carbonara", "la mejor", "url");
+        Ingredient ingredient = Ingredient.create(UUID.randomUUID(), "tomate", 1D);
+        Pizza pizza = Pizza
+        .builder()
+        .setId(UUID.randomUUID())
+        .setName("carbonara")
+        .setDescription("excelente")
+        .setUrl("url")
+        .build();
+        /* 
+        Pizza pizza = Pizza.create(UUID.randomUUID(),
+                "carbonara",
+                "la mejor del mundo",
+                "url");
+          */
         pizza.addIngredient(ingredient);
-        //esto no se deberia permitir
-        pizza.getIngredients().add(ingredient);
-
+        pizza.addIngredient(ingredient);
+        //esto no se debería permitir
+        //pizza.getIngredients().add(ingredient);
         System.err.println(pizza.getPrice());
-
-        ingredient.getId();
-        ingredient.getName();
-        ingredient.getPrice();
-
         // EntityBase entiy = new EntityBase(UUID.randomUUID());
-      
+        System.err.println(pizza.getName());
+    }
+
+    public static void setup() {
+        /*final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .build();
+
+        SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Events.class)
+                .buildMetadata()
+                .buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        var tr = session.beginTransaction();
+
+        Events events = new Events();
+        events.id = 1;
+
+        session.persist(events);
+        // var result = session.get(Events.class, 1);
+        // session.remove(events);
+
+        tr.commit();
+
+        // var result = session.get(Events.class, 1);
+
+        session.close();*/
     }
 }
