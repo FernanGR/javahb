@@ -6,10 +6,7 @@ import com.example.pizza.EntityBase;
 import com.example.pizza.Ingredient;
 import com.example.pizza.Pizza;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
     public static void main(String[] args) {
 
