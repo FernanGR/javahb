@@ -1,0 +1,32 @@
+Clase
+
+    class Foo{
+        public void writer(){
+            System.out.println("hello world");
+        }
+    }
+
+    Foo foo = new Foo();
+    foo.writer();
+
+Interface
+    abstraccion no se puede instanciar
+
+    public Interface Ifoo{
+        public void writer();
+    }
+
+Class+Interface
+    class Foo implements IFoo{
+        public void writer(){
+            System.out.println("hello world");
+        }
+    }
+Trabajo con abstracciones y no con implementaciones
+
+Los bojetos del sistema pueden ser sustituidos por
+sus sustipos sin alterar el correcto funcionamiento del programa
+
+    //OK
+    IFoo foo = new Foo();
+    foo.writer();
